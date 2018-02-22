@@ -12,6 +12,11 @@
     </parent>
 
     <artifactId>todo-list-server-javaee</artifactId>
+    <packaging>war</packaging>
+
+    <properties>
+        <failOnMissingWebXml>false</failOnMissingWebXml>
+    </properties>
 
     <dependencies>
         <dependency>
@@ -31,4 +36,15 @@
             <scope>compile</scope>
         </dependency>
     </dependencies>
+
+    <build>
+        <finalName>todo-app</finalName>
+        <plugins>
+             <plugin>
+                 <groupId>org.wildfly.plugins</groupId>
+                 <artifactId>wildfly-maven-plugin</artifactId>
+                 <version>1.2.1.Final</version>
+            </plugin>
+        </plugins>
+    </build>
 </project>
