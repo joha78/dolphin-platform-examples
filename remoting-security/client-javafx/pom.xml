@@ -6,29 +6,33 @@
 
     <parent>
         <groupId>com.canoo.dolphin-platform.examples</groupId>
-        <artifactId>todo-list</artifactId>
+        <artifactId>remoting-security</artifactId>
         <version>1.0-SNAPSHOT</version>
         <relativePath>../</relativePath>
     </parent>
 
-    <artifactId>todo-list-server-spring</artifactId>
+    <artifactId>remoting-security-client-javafx</artifactId>
 
     <dependencies>
         <dependency>
             <groupId>${groupId}</groupId>
-            <artifactId>todo-list-server-base</artifactId>
+            <artifactId>remoting-security-common</artifactId>
             <version>${version}</version>
         </dependency>
         <dependency>
             <groupId>com.canoo.dolphin-platform</groupId>
-            <artifactId>dolphin-platform-remoting-server-spring</artifactId>
+            <artifactId>dolphin-platform-remoting-client-javafx</artifactId>
             <version>${dolphin-platform.version}</version>
         </dependency>
         <dependency>
             <groupId>com.canoo.dolphin-platform</groupId>
-            <artifactId>dolphin-platform-spring-controller-tester</artifactId>
+            <artifactId>dolphin-platform-security-client</artifactId>
             <version>${dolphin-platform.version}</version>
-            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.slf4j</groupId>
+            <artifactId>slf4j-simple</artifactId>
+            <version>1.7.25</version>
         </dependency>
     </dependencies>
 </project>

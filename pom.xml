@@ -4,7 +4,7 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>com.canoo.dolphin-platform</groupId>
+    <groupId>com.canoo.dolphin-platform.examples</groupId>
     <artifactId>dolphin-platform-examples</artifactId>
     <version>1.0-SNAPSHOT</version>
     <packaging>pom</packaging>
@@ -18,6 +18,14 @@
 
     <modules>
         <module>todo-list</module>
+        <module>simple-rest</module>
+        <module>simple-security</module>
+        <module>remoting-security</module>
+        <module>reconnect</module>
+        <module>process-monitor</module>
+        <module>microservices</module>
+        <module>lazy-loading</module>
+        <module>distribution</module>
     </modules>
 
 </project>

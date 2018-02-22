@@ -1,7 +1,6 @@
 package com.canoo.platform.samples.reconnect;
 
 import com.canoo.platform.core.DolphinRuntimeException;
-import com.canoo.platform.remoting.DolphinRemotingException;
 import com.canoo.platform.remoting.client.ClientContext;
 import com.canoo.platform.remoting.client.javafx.DolphinPlatformApplication;
 import javafx.application.Platform;
@@ -39,11 +38,6 @@ public class ReconnectClient extends DolphinPlatformApplication {
 
         primaryStage.setScene(new Scene(parent));
         primaryStage.show();
-    }
-
-    @Override
-    protected void onRemotingError(final Stage primaryStage, final DolphinRemotingException exception) {
-        showErrorDialog(primaryStage, "The connection is broken", exception);
     }
 
     @Override

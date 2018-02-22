@@ -24,9 +24,9 @@ import com.canoo.platform.remoting.server.event.MessageEventContext;
 import com.canoo.platform.remoting.server.event.RemotingEventBus;
 import com.canoo.platform.samples.distribution.common.model.ToDoList;
 import com.canoo.platform.server.client.ClientSession;
+import org.springframework.beans.factory.annotation.Autowired;
 
 import javax.annotation.PostConstruct;
-import javax.inject.Inject;
 import java.util.function.Predicate;
 
 import static com.canoo.platform.samples.distribution.common.DistributionAppConstants.ADD_ACTION;
@@ -46,7 +46,7 @@ public class DistributionController {
     @RemotingModel
     private ToDoList toDoList;
 
-    @Inject
+    @Autowired
     public DistributionController(final RemotingEventBus eventBus, final ClientSession session) {
         this.eventBus = eventBus;
         this.session = session;

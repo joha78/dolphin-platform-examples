@@ -6,29 +6,28 @@
 
     <parent>
         <groupId>com.canoo.dolphin-platform.examples</groupId>
-        <artifactId>todo-list</artifactId>
+        <artifactId>distribution</artifactId>
         <version>1.0-SNAPSHOT</version>
         <relativePath>../</relativePath>
     </parent>
 
-    <artifactId>todo-list-server-base</artifactId>
+    <artifactId>distribution-server-external</artifactId>
 
     <dependencies>
         <dependency>
-            <groupId>${groupId}</groupId>
-            <artifactId>todo-list-common</artifactId>
-            <version>${version}</version>
+            <groupId>com.google.code.gson</groupId>
+            <artifactId>gson</artifactId>
+            <version>2.8.2</version>
         </dependency>
         <dependency>
-            <groupId>com.canoo.dolphin-platform</groupId>
-            <artifactId>dolphin-platform-remoting-server</artifactId>
-            <version>${dolphin-platform.version}</version>
+            <groupId>com.hazelcast</groupId>
+            <artifactId>hazelcast-client</artifactId>
+            <version>3.9.1</version>
         </dependency>
         <dependency>
-            <groupId>javax.inject</groupId>
-            <artifactId>javax.inject</artifactId>
-            <version>1</version>
-            <scope>compile</scope>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-web</artifactId>
+            <version>1.5.9.RELEASE</version>
         </dependency>
     </dependencies>
 </project>

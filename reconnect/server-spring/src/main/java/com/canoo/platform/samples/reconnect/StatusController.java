@@ -1,8 +1,8 @@
 package com.canoo.platform.samples.reconnect;
 
-import com.canoo.platform.remoting.server.DolphinController;
-import com.canoo.platform.remoting.server.DolphinModel;
 import com.canoo.platform.remoting.server.RemotingContext;
+import com.canoo.platform.remoting.server.RemotingController;
+import com.canoo.platform.remoting.server.RemotingModel;
 
 import javax.annotation.PostConstruct;
 import javax.inject.Inject;
@@ -11,10 +11,10 @@ import java.util.concurrent.Executors;
 
 import static com.canoo.platform.samples.reconnect.RemotingConstants.STATUS_CONTROLLER_NAME;
 
-@DolphinController(STATUS_CONTROLLER_NAME)
+@RemotingController(STATUS_CONTROLLER_NAME)
 public class StatusController {
 
-    @DolphinModel
+    @RemotingModel
     private StatusBean model;
 
     @Inject

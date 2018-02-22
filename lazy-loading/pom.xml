@@ -6,18 +6,18 @@
 
     <parent>
         <groupId>com.canoo.dolphin-platform.examples</groupId>
-        <artifactId>todo-list</artifactId>
+        <artifactId>dolphin-platform-examples</artifactId>
         <version>1.0-SNAPSHOT</version>
         <relativePath>../</relativePath>
     </parent>
 
-    <artifactId>todo-list-common</artifactId>
+    <artifactId>lazy-loading</artifactId>
+    <packaging>pom</packaging>
 
-    <dependencies>
-        <dependency>
-            <groupId>com.canoo.dolphin-platform</groupId>
-            <artifactId>dolphin-platform-remoting-common</artifactId>
-            <version>${dolphin-platform.version}</version>
-        </dependency>
-    </dependencies>
+    <modules>
+        <module>common</module>
+        <module>client-javafx</module>
+        <module>server-spring</module>
+    </modules>
+
 </project>

@@ -6,29 +6,28 @@
 
     <parent>
         <groupId>com.canoo.dolphin-platform.examples</groupId>
-        <artifactId>todo-list</artifactId>
+        <artifactId>reconnect</artifactId>
         <version>1.0-SNAPSHOT</version>
         <relativePath>../</relativePath>
     </parent>
 
-    <artifactId>todo-list-server-spring</artifactId>
+    <artifactId>reconnect-client-javafx</artifactId>
 
     <dependencies>
         <dependency>
             <groupId>${groupId}</groupId>
-            <artifactId>todo-list-server-base</artifactId>
+            <artifactId>reconnect-common</artifactId>
             <version>${version}</version>
         </dependency>
         <dependency>
             <groupId>com.canoo.dolphin-platform</groupId>
-            <artifactId>dolphin-platform-remoting-server-spring</artifactId>
+            <artifactId>dolphin-platform-remoting-client-javafx</artifactId>
             <version>${dolphin-platform.version}</version>
         </dependency>
         <dependency>
-            <groupId>com.canoo.dolphin-platform</groupId>
-            <artifactId>dolphin-platform-spring-controller-tester</artifactId>
-            <version>${dolphin-platform.version}</version>
-            <scope>test</scope>
+            <groupId>org.slf4j</groupId>
+            <artifactId>slf4j-simple</artifactId>
+            <version>1.7.25</version>
         </dependency>
     </dependencies>
 </project>

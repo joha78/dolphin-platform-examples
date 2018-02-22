@@ -1,11 +1,11 @@
 package com.canoo.platform.samples.reconnect;
 
-import com.canoo.platform.remoting.DolphinBean;
 import com.canoo.platform.remoting.Property;
+import com.canoo.platform.remoting.RemotingBean;
 
 import java.time.ZonedDateTime;
 
-@DolphinBean
+@RemotingBean
 public class StatusBean {
 
     private Property<ZonedDateTime> time;

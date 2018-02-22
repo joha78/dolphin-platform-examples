@@ -18,9 +18,9 @@ package com.canoo.platform.samples.lazyloading;
 import com.canoo.platform.remoting.BeanManager;
 import com.canoo.platform.remoting.server.*;
 import com.canoo.platform.remoting.server.RemotingModel;
+import org.springframework.beans.factory.annotation.Autowired;
 
 import javax.annotation.PostConstruct;
-import javax.inject.Inject;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
@@ -48,7 +48,7 @@ public class LazyLoadingController {
     @RemotingModel
     private LazyLoadingBean model;
 
-    @Inject
+    @Autowired
     public LazyLoadingController(final RemotingContext remotingContext, final BeanManager beanManager) {
         this.sessionExecutor = remotingContext.createSessionExecutor();
         this.beanManager = beanManager;
