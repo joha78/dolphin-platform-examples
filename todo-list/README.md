@@ -1,26 +1,26 @@
-#ToDo List sample
+# ToDo List sample
 
 This example contains a todo list that is shared between several clients.
 
-##Modules
+## Modules
 
 TODO
 
 ![modules](readme/modules.png "modules")
 
-##Start the sample
+## Start the sample
 
-###JavaEE server
+### JavaEE server
 `mvn wildfly:run`
 
-###Spring Boot server
+### Spring Boot server
 `mvn spring-boot:run`
 
-###JavaFX client
+### JavaFX client
 `mvn jfx:run`
 
-###Angular client
+### Angular client
 `mvn jetty:run`
 
-###Polymer client
+### Polymer client
 `mvn jetty:run`
