@@ -17,6 +17,7 @@
     <modules>
         <module>common</module>
         <module>client-javafx</module>
+        <module>client-polymer</module>
         <module>server-base</module>
         <module>server-javaee</module>
         <module>server-spring</module>
