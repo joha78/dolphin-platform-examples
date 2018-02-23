@@ -51,25 +51,25 @@ started by the `com.canoo.dolphin.todo.client.ToDoClient` class.
 
 ### Angular client
 To start the Angular client simply run `mvn jetty:run` from the `client-angular` folder. Once this is done the client
-can be reached at `http://localhost:9999`. Just open this url in any web browser.
+can be reached at `http://localhost:8081`. Just open this url in any web browser.
 
 By calling `mvn jetty:run` the following will happen:
 
 * NPM will be installed locally in the module folder.
 * `npm install` will be called in the folder. By doing so NPM will install bower
 * `bower install` will be called in the folder. This will download all needed dependencies for the client.
-* A Jetty instance will be started. This will host the client at `http://localhost:9999`
+* A Jetty instance will be started. This will host the client at `http://localhost:8081`
 
 ### Polymer client
 To start the Polymer client simply run `mvn jetty:run` from the `client-polymer` folder. Once this is done the client
-can be reached at `http://localhost:9999`. Just open this url in any web browser.
+can be reached at `http://localhost:8082`. Just open this url in any web browser.
 
 By calling `mvn jetty:run` the following will happen:
 
 * NPM will be installed locally in the module folder.
 * `npm install` will be called in the folder. By doing so NPM will install bower
 * `bower install` will be called in the folder. This will download all needed dependencies for the client.
-* A Jetty instance will be started. This will host the client at `http://localhost:9999`
+* A Jetty instance will be started. This will host the client at `http://localhost:8082`
 
 ## License
 The project is released as open source under the [Apache License Version 2.0](http://www.apache.org/licenses/LICENSE-2.0)
