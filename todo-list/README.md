@@ -17,9 +17,13 @@ todo item is added by one client it will automatically be shown by all other cli
 
 ## Modules
 
-TODO
+The sample is seperated in several modules. The following image shows the dependecies of the modules:
 
 ![modules](readme/modules.png "modules")
+
+For all Java modules the model of the application is defined in the `common` module. By doing so the module definition
+can easily be shared between client and server modules. The `server-base` module contains all classes that are "server
+framework agnostic" and can easily be used in JavaEE and Spring.
 
 ## Start the sample
 
