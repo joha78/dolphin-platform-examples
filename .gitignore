@@ -26,3 +26,6 @@ hs_err_pid*
 *.ipr
 *.iws
 target/
+bower_components/
+node/
+node_modules/
