@@ -1,6 +1,19 @@
+<p align="right">
+<a href="http://www.canoo.com"><img src="http://www.guigarage.com/wordpress/wp-content/uploads/2016/08/canoo_support.png"/></a>
+</p>
+
 # ToDo List sample
 
-This example contains a todo list that is shared between several clients.
+This example contains a todo list that is shared between several clients. The sample is based on the `remoting` modules
+of [Dolphin Platform](https://github.com/canoo/dolphin-platform). By doing so data can easily synchronized between
+client and server.
+
+![modules](readme/rpm.png "remoting")
+
+The application provides several clients for the todo app that are all connected to the same server instance. Whenever a
+todo item is added by one client it will automatically be shown by all other clients.
+
+![clients](readme/clients.png "clients")
 
 ## Modules
 
@@ -53,3 +66,20 @@ By calling `mvn jetty:run` the following will happen:
 * `npm install` will be called in the folder. By doing so NPM will install bower
 * `bower install` will be called in the folder. This will download all needed dependencies for the client.
 * A Jetty instance will be started. This will host the client at `http://localhost:9999`
+
+## License
+The project is released as open source under the [Apache License Version 2.0](http://www.apache.org/licenses/LICENSE-2.0)
+
+<br/><br/>
+<p align="center">
+<sub>About Canoo</sub>
+</p>
+<p align="center">
+<a title="Canoo Website" href="http://www.canoo.com/"><img style="margin:12px !important;" src="http://www.guigarage.com/wordpress/wp-content/uploads/2016/08/color-link-48-1.png"/></a>
+<a title="Canoo at Twitter" href="https://twitter.com/canoo"><img style="margin:12px !important;" src="http://www.guigarage.com/wordpress/wp-content/uploads/2016/08/color-twitter-48-1.png"/></a>
+<a title="Canoo at LinkedIn" href="https://www.linkedin.com/company/canoo-engineering-ag"><img style="margin:12px !important;" src="http://www.guigarage.com/wordpress/wp-content/uploads/2016/08/color-linkedin-48-1.png"/></a>
+<a title="Canoo at Xing" href="https://www.xing.com/companies/canooengineeringag"><img style="margin:12px !important;" src="http://www.guigarage.com/wordpress/wp-content/uploads/2016/08/xing-48-1.png"/></a>
+<a title="Canoo at YouTube" href="https://www.youtube.com/user/canoovideo"><img style="margin:12px !important;" src="http://www.guigarage.com/wordpress/wp-content/uploads/2016/08/color-youtube-48-1.png"/></a>
+<a title="Canoo at GitHub" href="https://github.com/canoo"><img style="margin:12px !important;" src="http://www.guigarage.com/wordpress/wp-content/uploads/2016/08/color-github-48-1.png"/></a>
+<a title="Contact Canoo" href="mailto:info@canoo.com"><img style="margin:12px !important;" src="http://www.guigarage.com/wordpress/wp-content/uploads/2016/08/color-forwardtofriend-48-1.png"/></a>
+</p>
