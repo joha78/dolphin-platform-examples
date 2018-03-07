@@ -24,8 +24,6 @@ pattern. In the remoting layer, all models will automatically be synchronized be
 
 Based on this, the remoting layer defines server side controllers that contain all the controller logic for a specific view. The lifecycle of these controllers is automatically synchronized with the view lifecycle. With this approach you have a MVC group for each client view with a synchronized model and a managed controller.
 
-![remote presentation model](readme/rpm-mvc.png "remote presentation model")
-
 To share data between different clients the remoting event bus is used. This event bus can be used to notify remoting
 controllers. A controller can simply subscribe itself to any topic and will be notified once an event for that topic is
 fired. Since subscription can only be done in the remoting lifecycle (in a remoting controller), any service can send
