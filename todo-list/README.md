@@ -15,6 +15,28 @@ todo item is added by one client it will automatically be shown by all other cli
 
 ![clients](readme/clients.png "clients")
 
+## How is the sync between clients implemented?
+
+This sample is based on top of the Dolphin Platform remoting layer. This API implements the remote presentation model
+pattern. In the remoting layer, all models will automatically be synchronized between client and server. Thus, you don't need to think about any specific endpoints or requests.
+
+![remote presentation model](readme/rpm-overview.png "remote presentation model")
+
+Based on this, the remoting layer defines server side controllers that contain all the controller logic for a specific view. The lifecycle of these controllers is automatically synchronized with the view lifecycle. With this approach you have a MVC group for each client view with a synchronized model and a managed controller.
+
+![remote presentation model](readme/rpm-mvc.png "remote presentation model")
+
+To share data between different clients the remoting event bus is used. This event bus can be used to notify remoting
+controllers. A controller can simply subscribe itself to any topic and will be notified once an event for that topic is
+fired. Since subscription can only be done in the remoting lifecycle (in a remoting controller), any service can send
+an event to the eventbus. By doing so several views can easy be updated based on a service call or even the call of an rest endpoint.
+
+![eventbus](readme/eventbus.png "eventbus")
+
+In this sample each controller simply calls a general service once an item is added in the view. This service will fire
+an event to the eventbus and since all remoting controllers are subscribed to the event the new item will be shown on
+each client.
+
 ## Modules
 
 The sample is seperated in several modules. The following image shows the dependecies of the modules:
