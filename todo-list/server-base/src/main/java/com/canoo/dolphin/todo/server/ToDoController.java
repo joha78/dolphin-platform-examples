@@ -15,17 +15,21 @@
  */
 package com.canoo.dolphin.todo.server;
 
+import com.canoo.platform.core.functional.Subscription;
 import com.canoo.platform.remoting.BeanManager;
+import com.canoo.platform.remoting.server.Param;
 import com.canoo.platform.remoting.server.RemotingAction;
 import com.canoo.platform.remoting.server.RemotingController;
 import com.canoo.platform.remoting.server.RemotingModel;
-import com.canoo.platform.remoting.server.Param;
 import com.canoo.platform.remoting.server.event.RemotingEventBus;
 import com.canoo.platform.samples.distribution.common.model.ToDoItem;
 import com.canoo.platform.samples.distribution.common.model.ToDoList;
 
 import javax.annotation.PostConstruct;
+import javax.annotation.PreDestroy;
 import javax.inject.Inject;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Optional;
 
 import static com.canoo.dolphin.todo.TodoAppConstants.ADD_ACTION;
@@ -46,6 +50,8 @@ public class ToDoController {
 
     private final TodoItemStore todoItemStore;
 
+    private final List<Subscription> subscriptions = new ArrayList<>();
+
     @RemotingModel
     private ToDoList toDoList;
 
@@ -58,10 +64,20 @@ public class ToDoController {
 
     @PostConstruct
     public void onInit() {
-        eventBus.subscribe(ITEM_MARK_CHANGED, message -> updateItemState(message.getData()));
-        eventBus.subscribe(ITEM_REMOVED, message -> removeItem(message.getData()));
-        eventBus.subscribe(ITEM_ADDED, message -> addItem(message.getData()));
+        final Subscription changedSubscription = eventBus.subscribe(ITEM_MARK_CHANGED, message -> updateItemState(message.getData()));
+        final Subscription removedSubscription = eventBus.subscribe(ITEM_REMOVED, message -> removeItem(message.getData()));
+        final Subscription addedSubscritpion = eventBus.subscribe(ITEM_ADDED, message -> addItem(message.getData()));
+
+        subscriptions.add(changedSubscription);
+        subscriptions.add(removedSubscription);
+        subscriptions.add(addedSubscritpion);
+
         todoItemStore.itemNameStream().forEach(name -> addItem(name));
+    }
+
+    @PreDestroy
+    public void onDestroy() {
+        subscriptions.forEach(subscription -> subscription.unsubscribe());
     }
 
     @RemotingAction(ADD_ACTION)
