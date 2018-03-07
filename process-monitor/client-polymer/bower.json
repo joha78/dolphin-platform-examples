@@ -1,16 +1,5 @@
 {
   "name": "process-monitor-client-polymer",
-  "authors": [
-    "Hendrik Ebbers <hendrik.ebbers@web.de>"
-  ],
-  "license": "MIT",
-  "ignore": [
-    "**/.*",
-    "node_modules",
-    "bower_components",
-    "test",
-    "tests"
-  ],
   "dependencies": {
     "dolphin-platform-polymer": "1.0.0-CR.4",
     "font-roboto": "PolymerElements/font-roboto-local#^1.0.1",
