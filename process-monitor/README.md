@@ -50,7 +50,7 @@ All modules provide a Maven target to start the application.
 ### JavaEE server
 To start the JavaEE server simply run `mvn wildfly:run` from the `server-javaee` folder. Next to this the server can
 be deployed to any JavaEE 6 application server. To do so run `mvn verify` from the `server-javaee` folder. The created
-`todo-app.war` in the `target` folder can be deployed as JavaEE web application. The application must be reachable
+`process-monitor.war` in the `target` folder can be deployed as JavaEE web application. The application must be reachable
 under `http://localhost:8080/process-monitor`.
 
 ### Spring Boot server
