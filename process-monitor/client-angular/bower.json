@@ -1,5 +1,5 @@
 {
-  "name": "todo-client-angular",
+  "name": "process-monitor-client-angular",
   "dependencies": {
     "dolphin-platform-angularjs": "1.0.0-CR.4",
     "bootstrap": "^3.3.7"

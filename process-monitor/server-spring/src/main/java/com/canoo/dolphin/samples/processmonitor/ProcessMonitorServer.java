@@ -27,10 +27,10 @@ import java.util.concurrent.CopyOnWriteArrayList;
 import java.util.concurrent.Executors;
 
 @DolphinPlatformRemotingApplication
-public class ProcessMonitorStarter {
+public class ProcessMonitorServer {
 
     public static void main(String... args) {
-        SpringApplication.run(ProcessMonitorStarter.class, args);
+        SpringApplication.run(ProcessMonitorServer.class, args);
     }
 
     @Bean
