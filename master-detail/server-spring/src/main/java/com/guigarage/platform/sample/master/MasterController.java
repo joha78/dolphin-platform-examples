@@ -18,7 +18,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import static com.guigarage.platform.sample.data.Topics.CLEAR;
-import static com.guigarage.platform.sample.data.Topics.NEW_ITEMS;
+import static com.guigarage.platform.sample.data.Topics.NEW_ITEM;
 import static com.guigarage.platform.sample.data.Topics.REMOVE_LAST;
 
 @RemotingController("MasterController")
@@ -61,10 +61,10 @@ public class MasterController {
 
         model.setNestedBean(firstNestedBean);
 
-        sync(dataService.getItems());
+        dataService.getItems().forEach(i -> internalAdd(i));
         subs.add(remotingEventBus.subscribe(CLEAR, message -> internalClear()));
         subs.add(remotingEventBus.subscribe(REMOVE_LAST, message -> internalRemoveLast(message.getData())));
-        subs.add(remotingEventBus.subscribe(NEW_ITEMS, message -> internalAdd(message.getData())));
+        subs.add(remotingEventBus.subscribe(NEW_ITEM, message -> internalAdd(message.getData())));
         LOGGER.debug("Created Controller with {}", model.getItems());
     }
 
@@ -143,26 +143,16 @@ public class MasterController {
         }
     }
 
-    private void internalAdd(final List<DataItem> list) {
-        LOGGER.debug("Adding items");
-        sync(list);
+    private void internalAdd(final DataItem item) {
+        final ItemOverviewBean bean = beanManager.create(ItemOverviewBean.class);
+        bean.setId(item.getId());
+        bean.setName(item.getName());
+        bean.setDescription(item.getDescription());
+        model.getItems().add(bean);
     }
 
     private void internalClear() {
         LOGGER.debug("Clearing model");
         model.getItems().clear();
     }
-
-    private void sync(final List<DataItem> list) {
-        LOGGER.debug("Sync with {} items", list.size());
-        list.forEach(i -> {
-            ItemOverviewBean bean = beanManager.create(ItemOverviewBean.class);
-            bean.setId(i.getId());
-            bean.setName(i.getName());
-            bean.setDescription(i.getDescription());
-            model.getItems().add(bean);
-        });
-    }
-
-
 }

@@ -22,8 +22,6 @@
       <app-toolbar class="toolbar">
         <div main-title>Master Detail Sample</div>
         <paper-icon-button icon="home" on-tap="goHome"></paper-icon-button>
-        <paper-icon-button icon="add" on-tap="addItem"></paper-icon-button>
-        <paper-icon-button icon="warning" on-tap="goTest"></paper-icon-button>
         <paper-icon-button icon="error-outline" on-tap="onError"></paper-icon-button>
       </app-toolbar>
     </app-header>
@@ -31,10 +29,8 @@
     <app-router id="router">
       <app-route path="/" import="master-view.html" bindRouter></app-route>
       <app-route path="/detail/:id" import="detail-view.html" bindRouter></app-route>
-      <app-route path="/test" import="test-view.html"></app-route>
       <app-route path="*" import="error-view.html"></app-route>
     </app-router>
-
   </template>
 
   <script>
@@ -47,19 +43,11 @@
                       reflectToAttribute: true
                   }
               },
-              attached() {
-                  console.log('added to DOM');
-                  this.$.router.go('/');
-              },
               goHome() {
                   this.$.router.go('/');
               },
               onError() {
                   this.$.router.go('/error');
-              }
-              ,
-              goTest() {
-                  this.$.router.go('/test');
               }
           });
       });

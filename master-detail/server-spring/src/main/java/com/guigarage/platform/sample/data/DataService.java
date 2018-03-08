@@ -1,7 +1,6 @@
 package com.guigarage.platform.sample.data;
 
 import com.canoo.platform.remoting.server.event.RemotingEventBus;
-import com.canoo.platform.remoting.server.event.Topic;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -13,10 +12,9 @@ import java.util.Collections;
 import java.util.List;
 import java.util.concurrent.CopyOnWriteArrayList;
 import java.util.concurrent.atomic.AtomicLong;
-import java.util.stream.IntStream;
 
 import static com.guigarage.platform.sample.data.Topics.CLEAR;
-import static com.guigarage.platform.sample.data.Topics.NEW_ITEMS;
+import static com.guigarage.platform.sample.data.Topics.NEW_ITEM;
 import static com.guigarage.platform.sample.data.Topics.REMOVE_LAST;
 
 @Service
@@ -57,19 +55,13 @@ public class DataService {
     }
 
     public void add() {
-        int itemCount = 6;
-        final CopyOnWriteArrayList<DataItem> newItems = new CopyOnWriteArrayList<>();
-        LOGGER.debug("Adding {} items", itemCount);
-        IntStream.range(0, itemCount).forEach(i -> {
-            final long id = idCounter.incrementAndGet();
-            final DataItem item = new DataItem();
-            item.setId(id);
-            item.setName("Item " + id);
-            item.setDescription("Die ist die Beschreibung für Item " + id + "...");
-            items.add(item);
-            newItems.add(item);
-        });
-        remotingEventBus.publish(NEW_ITEMS, newItems);
+        final long id = idCounter.incrementAndGet();
+        final DataItem item = new DataItem();
+        item.setId(id);
+        item.setName("Item " + id);
+        item.setDescription("Die ist die Beschreibung für Item " + id + "...");
+        items.add(item);
+        remotingEventBus.publish(NEW_ITEM, item);
     }
 
     public void removeLast() {
