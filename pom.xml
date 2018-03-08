@@ -26,6 +26,7 @@
         <module>microservices</module>
         <module>lazy-loading</module>
         <module>distribution</module>
+        <module>master-detail</module>
     </modules>
 
 </project>

@@ -1,0 +1,192 @@
+<script src="bower_components/webcomponentsjs/webcomponents-lite.js"></script>
+<link rel="import" href="bower_components/polymer/polymer.html">
+<!-- <link rel="import" href="bower_components/dolphin-platform-polymer/dolphin-controller.html"> -->
+<link rel="import" href="bower_components/iron-list/iron-list.html">
+<link rel="import" href="bower_components/iron-image/iron-image.html">
+<link rel="import" href="bower_components/paper-styles/color.html">
+<link rel="import" href="bower_components/paper-styles/typography.html">
+<link rel="import" href="bower_components/paper-button/paper-button.html">
+<link rel="import" href="bower_components/dolphin-platform-polymer/remoting-controller.html">
+
+
+<dom-module id="master-view">
+    <template>
+
+        <style>
+            .item-container {
+                display: flex;
+                flex-direction: row;
+                flex-wrap: nowrap;
+                justify-content: flex-start;
+
+                padding: 12px;
+                border-color: var(--divider-color);
+                border-width: 0px 0px 1px 0px;
+                border-style: solid;
+                cursor: pointer;
+            }
+
+            .item-container:hover {
+                outline: 0;
+                background-color: var(--light-primary-color);
+            }
+
+            .item-content {
+                flex-grow: 1;
+
+                display: flex;
+                flex-direction: column;
+                flex-wrap: nowrap;
+                justify-content: flex-start;
+
+                padding-left: 6px;
+            }
+
+            .paper-font-title {
+                @apply --paper-font-title;
+            }
+
+            .paper-font-body1 {
+                @apply --paper-font-body1;
+            }
+
+            .avatar {
+                width: 64px;
+                height: 64px;
+                border: 2px solid var(--divider-color);
+                border-radius: 50%;
+            }
+        </style>
+
+        <!-- <dolphin-controller id="controller" name="MasterController" model="{{model}}"></dolphin-controller> -->
+
+        <remoting-controller id="controller" name="MasterController" model="{{model}}"></remoting-controller>
+
+        <div>
+            <paper-button raised on-click="resetNested">Reset Nested</paper-button>
+            <paper-button raised on-click="setNested">Set Nested</paper-button>
+            <paper-button raised on-click="resetOtherNested">Set other Nested</paper-button>
+
+        </div>
+
+        <div>
+            Nested name:[[model.nestedBean.name]]
+        </div>
+        <div>
+            Nested other name:[[model.nestedBean.other.name]]
+        </div>
+        <hr />
+
+        <div>
+            <paper-button raised on-click="clearServer">Clear on Server</paper-button>
+            <paper-button raised on-click="clearClient">Clear on Client</paper-button>
+            <paper-button raised on-click="add">Add</paper-button>
+            <paper-button raised on-click="removeLast">Remove Last</paper-button>
+        </div>
+
+        <hr />
+
+        <template is="dom-repeat" items="[[model.items]]" as="item">
+            <paper-item>
+                <div class="item-container" on-click="selected">
+                    <iron-image sizing="cover" class="avatar" src="profil.png"></iron-image>
+                    <div class="item-content">
+                        <div class="paper-font-title">[[index]] - [[item.name]]</div>
+                        <div class="paper-font-body1">[[item.description]]</div>
+                    </div>
+                </div>
+            </paper-item>
+        </template>
+
+        <hr />
+        <!--
+        ISSUE: https://github.com/PolymerElements/iron-list/issues/504
+        <iron-list items="[[model.items]]" as="item" selected-items="{{selectedItems}}" selection-enabled>
+            <template>
+                <div class="item-container">
+                    <iron-image sizing="cover" class="avatar" src="profil.png"></iron-image>
+                    <div class="item-content">
+                        <div class="paper-font-title">[[index]] - [[item.name]]</div>
+                        <div class="paper-font-body1">[[item.description]]</div>
+                    </div>
+                </div>
+            </template>
+        </iron-list>
+        -->
+
+    </template>
+    <script>
+        class MasterView extends Polymer.Element {
+            static get is() {
+                return "master-view"
+            }
+
+            static get properties() {
+                return {
+                    selectedItems: {
+                        type: Object,
+                        reflectToAttribute: true,
+                        observer: '_selectionChanged'
+                    }
+                }
+            }
+
+            connectedCallback() {
+                super.connectedCallback();
+                /*
+                this.$.controller.create().then(function(){
+                    console.log('BIIING!');
+                }); */
+            }
+
+            disconnectedCallback() {
+                super.disconnectedCallback();
+                /*
+                this.$.controller.destroy().then(function(){
+                    console.log('BOOONG!');
+                });*/
+            }
+
+            clearServer() {
+                console.log('clear on server');
+                this.$.controller.invoke('clear');
+            }
+            clearClient() {
+                console.log('clear on client', this.$.controller.model);
+                let len = this.$.controller.model.items.length;
+                let rest = this.$.controller.splice('model.items', 0, len);
+                console.log('rest');
+            }
+            add() {
+                console.log('add');
+                this.$.controller.invoke('add');
+            }
+            removeLast() {
+                console.log('removeLast');
+                this.$.controller.invoke('removeLast');
+            }
+            resetNested() {
+                console.log('reset nested bean on server');
+                this.$.controller.invoke('resetNested');
+            }
+            setNested() {
+                console.log('set nested bean on server');
+                this.$.controller.invoke('setNested');
+            }
+            resetOtherNested() {
+                console.log('set other nested bean on server');
+                this.$.controller.invoke('resetOtherNested');
+            }
+            selected(value) {
+                let id = value.model.item.id;
+                console.log('selected', id);
+                if (id) {
+                    this.router.go('/detail/' + id);
+                }
+            }
+        }
+
+        customElements.define(MasterView.is, MasterView);
+
+    </script>
+</dom-module>
