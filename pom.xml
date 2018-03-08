@@ -27,6 +27,7 @@
         <module>lazy-loading</module>
         <module>distribution</module>
         <module>master-detail</module>
+        <module>rss-reader</module>
     </modules>
 
 </project>
