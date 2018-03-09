@@ -2,7 +2,7 @@
 <a href="http://www.canoo.com"><img src="http://www.guigarage.com/wordpress/wp-content/uploads/2016/08/canoo_support.png"/></a>
 </p>
 
-#Simple REST example
+# Simple REST example
 
 This sample shows the usage of the Dolphin Platform HTTP client.
 
