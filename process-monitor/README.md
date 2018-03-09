@@ -25,7 +25,12 @@ pattern. In the remoting layer, all models will automatically be synchronized be
 
 Based on this, the remoting layer defines server side controllers that contain all the controller logic for a specific view. The lifecycle of these controllers is automatically synchronized with the view lifecycle. With this approach you have a MVC group for each client view with a synchronized model and a managed controller.
 
-TODO: Async
+To allow dynamic updates from the client and the server the remoting layer of the Dolphin Platform uses
+interruptable long polling for communication. By doing so both sides can easily send updates.
+
+![long polling](readme/long-poll.png "long polling")
+
+In the given example a background thread on the server checks the cpu top of the machine and provides an update task to the remoting layer that will automatically be called with the next long poll. If for the given client a long poll is currently running it will be directly called. 
 
 ## Modules
 
