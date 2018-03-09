@@ -30,7 +30,7 @@ interruptable long polling for communication. By doing so both sides can easily 
 
 ![long polling](readme/long-poll.png "long polling")
 
-In the given example a background thread on the server checks the cpu top of the machine and provides an update task to the remoting layer that will automatically be called with the next long poll. If for the given client a long poll is currently running it will be directly called. 
+In the given example a background thread on the server checks the cpu top of the machine and provides an update task to the remoting layer that will automatically be called with the next long poll. If for the given client a long poll is currently running it will be directly called.
 
 ## Modules
 
