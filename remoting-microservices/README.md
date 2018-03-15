@@ -14,9 +14,23 @@ data from different servers.
 
 TODO
 
+![modules](readme/modules.png "modules")
+
 ## Start the sample
 
-TODO
+The sample provides 2 Spring Boot based microservices.
+
+### Spring Boot server 1
+To start the Spring Boot server simply run `mvn spring-boot:run` from the `server-spring-data1` folder. Next to this the
+server can be started by the `com.canoo.platform.samples.microservices.product.ProductServer` class.
+
+The server is running at `http://localhost:8080`
+
+### Spring Boot server 2
+To start the Spring Boot server simply run `mvn spring-boot:run` from the `server-spring-data2` folder. Next to this the
+server can be started by the `com.canoo.platform.samples.microservices.product.ProductServer` class.
+
+The server is running at `http://localhost:8081`
 
 ## License
 The project is released as open source under the [Apache License Version 2.0](http://www.apache.org/licenses/LICENSE-2.0)
