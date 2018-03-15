@@ -16,6 +16,7 @@ The project contains the following examples:
 * [Todo list](todo-list/README.md)
 * [Process monitor](process-monitor/README.md)
 * [HTTP client](simple-rest/README.md)
+* [Remoting microservices](remoting-microservices/README.md)
 
 ## License
 The project is released as open source under the [Apache License Version 2.0](http://www.apache.org/licenses/LICENSE-2.0)

@@ -11,7 +11,7 @@
         <relativePath>../</relativePath>
     </parent>
 
-    <artifactId>microservices</artifactId>
+    <artifactId>remoting-microservices</artifactId>
     <packaging>pom</packaging>
 
     <modules>
