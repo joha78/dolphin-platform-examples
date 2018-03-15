@@ -23,7 +23,7 @@
         <module>remoting-security</module>
         <module>reconnect</module>
         <module>process-monitor</module>
-        <module>microservices</module>
+        <module>remoting-microservices</module>
         <module>lazy-loading</module>
         <module>distribution</module>
         <module>master-detail</module>
