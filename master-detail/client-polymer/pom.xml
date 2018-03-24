@@ -55,6 +55,24 @@
                     </httpConnector>
                 </configuration>
             </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-clean-plugin</artifactId>
+                <configuration>
+                    <filesets>
+                        <fileset>
+                            <directory>${basedir}</directory>
+                            <followSymlinks>false</followSymlinks>
+                            <includes>
+                                <include>bower_components/</include>
+                                <include>etc/</include>
+                                <include>node/</include>
+                                <include>node_modules/</include>
+                            </includes>
+                        </fileset>
+                    </filesets>
+                </configuration>
+            </plugin>
         </plugins>
     </build>
 
