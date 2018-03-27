@@ -5,7 +5,7 @@
 # Dolphin Platform Examples
 This project contains several examples for the [Dolphin Platform](https://github.com/canoo/dolphin-platform).
 
-![Dolphin Platform Logo](doc/logo.png)
+![Dolphin Platform Logo](readme/logo.png)
 
 ## Project structure
 The complete project is defined as a multi module maven project. By doing so yo only need Java 8 and Maven to run the projects.
