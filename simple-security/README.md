@@ -47,6 +47,19 @@ Once you have checked out the repository you only need to call the `restart` scr
 Keycloak 3.4.0.Final (WildFly Core 3.0.1.Final) started in 14189ms - Started 523 of 845 services (568 services are lazy, passive or on-demand)
 ```
 
+### Spring Boot server
+To start the Spring Boot server simply run `mvn spring-boot:run` from the `server-spring` folder. Next to this the
+server can be started by the `com.canoo.platform.samples.security.Server` class.
+
+### JavaFX client
+To start the JavaFX client simply run `mvn jfx:run` from the `client-javafx` folder. Next to this the client can be
+started by the `com.canoo.platform.samples.security.Client` class.
+
+### JavaScript client
+TODO
+
+### Polymer client
+TODO
 
 ## License
 The project is released as open source under the [Apache License Version 2.0](http://www.apache.org/licenses/LICENSE-2.0)
