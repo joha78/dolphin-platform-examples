@@ -24,10 +24,6 @@ By doing so secured endpoints can be called without any additional security hand
 
 The server receives the security token and automatically validates it against the keycloak server.
 
-## Modules
-
-TODO
-
 ## Start the sample
 
 As said the sample uses keycloak for for identity and access management. Based on that a keycloak instance
