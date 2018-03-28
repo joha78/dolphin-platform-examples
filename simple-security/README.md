@@ -8,11 +8,19 @@ TODO
 
 ## How is the security implemented?
 
-TODO
+The Dolphin Platform uses [keycloak](https://www.keycloak.org) for identity and access management. By adding
+the `dolphin-platform-security-server` module to the server application a proxy servlet will be added
+to the server that provides login functionallity by calling the keycloak server internally.
+
+![Keycloak workflow](readme/keycloak.png "Keycloak workflow")
+
+The security is based on OpenID connect and JWT tokens. Once a client is login it will receive a JWT security
+token. The http client of the Dolphin Platform automatically adds this token to any request against the server.
+By doing so secured endpoints can be called without any additional security handling after a sucessfull login.
 
 ![http client and security](readme/http-client.png "http client and security")
 
-![Keycloak workflow](readme/keycloak.png "Keycloak workflow")
+The server receives the security token and automatically validates it against the keycloak server.
 
 ## Modules
 
