@@ -43,9 +43,9 @@ is created and started.
 
 Once you have checked out the repository you only need to call the 'restart' script from the 'keycloak-container' folder and the docker container will be created and started. Since this will download keycloak and do several configuration steps this can take some minutes. The server is up and running once you see the following message in the log:
 
-'''
+```
 Keycloak 3.4.0.Final (WildFly Core 3.0.1.Final) started in 14189ms - Started 523 of 845 services (568 services are lazy, passive or on-demand)
-'''
+```
 
 
 ## License
