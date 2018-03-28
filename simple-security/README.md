@@ -4,7 +4,9 @@
 
 # Security sample
 
-TODO
+This examples shows how the security APIs of Dolphin Platform can be used. Since this sample concentrates on
+the usage of that security API it do not contain any dynamic clients. The provided clients simply do a login
+against the server and call a secure REST endpoint on the server.
 
 ## How is the security implemented?
 
