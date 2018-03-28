@@ -15,10 +15,11 @@ an overview about the example and how to start it.
 ## Examples
 The project contains the following examples:
 
-* [Todo list](todo-list/README.md)
-* [Process monitor](process-monitor/README.md)
-* [HTTP client](simple-rest/README.md)
-* [Remoting microservices](remoting-microservices/README.md)
+* [Todo list](todo-list/)
+* [Process monitor](process-monitor/)
+* [HTTP client](simple-rest/)
+* [Remoting microservices](remoting-microservices/)
+* [Security sample](simple-security/)
 
 ## License
 The project is released as open source under the [Apache License Version 2.0](http://www.apache.org/licenses/LICENSE-2.0)
