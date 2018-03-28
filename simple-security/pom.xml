@@ -16,6 +16,7 @@
 
     <modules>
         <module>client-javascript</module>
+        <module>client-polymer</module>
         <module>client-javafx</module>
         <module>server-spring</module>
     </modules>
