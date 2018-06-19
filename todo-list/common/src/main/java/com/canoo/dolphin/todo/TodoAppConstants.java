@@ -22,8 +22,9 @@ public interface TodoAppConstants {
     String REMOVE_ACTION = "remove";
 
     String CHANGE_ACTION = "change";
-
+    
     String TODO_CONTROLLER_NAME = "ToDoController";
+    String TODO_CONTROLLER2_NAME = "ToDoController2";
 
     String ITEM_PARAM = "item";
 }

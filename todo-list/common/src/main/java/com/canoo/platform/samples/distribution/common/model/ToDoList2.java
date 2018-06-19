@@ -13,19 +13,24 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.canoo.dolphin.todo.server;
+package com.canoo.platform.samples.distribution.common.model;
 
-import com.canoo.platform.remoting.server.event.Topic;
+import com.canoo.platform.remoting.ObservableList;
+import com.canoo.platform.remoting.Property;
+import com.canoo.platform.remoting.RemotingBean;
 
-public interface ToDoEventTopics {
-    
-    Topic<String> ITEM_MARK_CHANGED = Topic.create("item_mark_changed");
-    Topic<String> ITEM_MARK_CHANGED2 = Topic.create("item_mark_changed2");
-    
-    Topic<String> ITEM_ADDED = Topic.create("item_added");
-    Topic<String> ITEM_ADDED2 = Topic.create("item_added2");
-    
-    Topic<String> ITEM_REMOVED = Topic.create("item_removed");
-    Topic<String> ITEM_REMOVED2 = Topic.create("item_removed2");
+@RemotingBean
+public class ToDoList2 {
 
+    private ObservableList<ToDoItem2> items2;
+
+    private Property<String> newItemText2;
+
+    public ObservableList<ToDoItem2> getItems2() {
+        return items2;
+    }
+
+    public Property<String> getNewItemText2() {
+        return newItemText2;
+    }
 }

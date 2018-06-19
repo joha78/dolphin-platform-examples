@@ -29,4 +29,10 @@ public class ToDoServerConfiguration {
     public TodoItemStore createStore(RemotingEventBus eventBus) {
         return new TodoItemStore(eventBus);
     }
+    
+    @Bean
+    @Scope(ConfigurableBeanFactory.SCOPE_SINGLETON)
+    public TodoItemStore2 createStore2(RemotingEventBus eventBus) {
+        return new TodoItemStore2(eventBus);
+    }
 }
